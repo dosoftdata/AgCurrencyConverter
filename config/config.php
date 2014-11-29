@@ -4,14 +4,14 @@ define('SITE_ROOT', dirname(dirname(__FILE__)));
 // Database connectivity setup  
 define('DB_PERSISTENCY', 'true');
 define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', ' ');
+define('DB_USERNAME', 'aguser');
+define('DB_PASSWORD', 'AXcnVFzGqPy6UKTS');
 define('DB_DATABASE','agcurrency');
-define('PDO_DSN', 'mysql:host=' . DB_SERVER . ';dbname=' . DB_DATABASE);
+define('DB_DRIVER','Pdo_Mysql');
 
 // These should be true while developing the web site
 define('IS_WARNING_FATAL', true);
-define('DEBUGGING', false);
+define('DEBUGGING', true);
 // The error types to be reported
 define('ERROR_TYPES', 1);
 // Settings about mailing the error messages to admin
@@ -24,7 +24,7 @@ define('ADMNEMAIL','clemwm@gmail.com');
 
 // By default we don't log errors to a file
 
-define('LOG_ERRORS', false);
+define('LOG_ERRORS', true);
 define('LOG_ERRORS_FILE', SITE_ROOT.'/errors_log.txt'); // Windows
 
 //define('LOG_ERRORS_FILE', SITE_ROOT.'/errors.log'); // Linux

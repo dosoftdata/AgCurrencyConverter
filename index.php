@@ -1,6 +1,12 @@
-<?php require_once 'header.inc'; 
-use AGCURRENCYCONVERTER\Error\ErrorHandler;
+<?php require_once 'header.inc';
+
+use AGCURRENCYCONVERTER\Error\ErrorHandler,
+    AGCURRENCYCONVERTER\Db\DatabaseHandler;
+//error_reporting(1);
 ErrorHandler::SetHandler();
+  ini_set("display_errors",1);
+      $sql = 'CALL sql_load_currency_default()';
+       $result = DatabaseHandler::GetAll($sql);
 /*
 $(".numericOnly").keypress(function (e) {
     if (String.fromCharCode(e.keyCode).match(/[^0-9]/g)) return false;
@@ -8,7 +14,7 @@ $(".numericOnly").keypress(function (e) {
 */
 ?>
 <body>
-    <div class="container" style="margin-left: auto; margin-right: auto; margin-top: 5%;width: 44%">        
+    <div class="container" style="margin-left: auto; margin-right: auto; margin-top: 5%;width: 72%">        
        <div class="panel panel-primary">
            <div class="panel-heading">
                <h3 class="panel-title">Currency Converter</h3> 
@@ -19,11 +25,13 @@ $(".numericOnly").keypress(function (e) {
           <div class="form-group">
               <label for="name">From</label>
               <select class="form-control"> 
-                  <option>1</option> 
-                  <option>2</option> 
-                  <option>3</option> 
-                  <option>4</option> 
-                  <option>5</option> 
+      <?php    
+       for ($i= 0; $i < count($result); $i++) {
+          $optionValue = $result[$i]['basecurrency'];
+          $optionText = $result[$i]['currency_name'];
+          print '<option value = "'.$optionValue.'">'.$optionText.'</option>';
+       }
+       ?>
               </select>
           </div> 
           <div class="form-group"> 
@@ -32,11 +40,13 @@ $(".numericOnly").keypress(function (e) {
                    <div class="form-group"> 
                        <label for="name">To:</label>
               <select class="form-control"> 
-                  <option>1</option> 
-                  <option>2</option> 
-                  <option>3</option> 
-                  <option>4</option> 
-                  <option>5</option> 
+              <?php    
+       for ($i= 0; $i < count($result); $i++) {
+          $optionValue = $result[$i]['basecurrency'];
+          $optionText = $result[$i]['currency_name'];
+          print '<option value = "'.$optionValue.'">'.$optionText.'</option>';
+       }
+       ?>
               </select>
           </div>  
                </form>
