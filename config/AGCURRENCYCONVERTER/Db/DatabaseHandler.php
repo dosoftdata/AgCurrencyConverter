@@ -1,4 +1,8 @@
 <?php
+/**
+ * @author : CMU
+ * @tutorial:Handle all database activities(CRUD) based on ZF2 database adaptor'  
+ */
 namespace AGCURRENCYCONVERTER\Db;
 // Class providing generic data access functionality
 
@@ -13,7 +17,17 @@ class DatabaseHandler
     private static $_mHandler;
     private static $_rOwset;
     // Private constructor to prevent direct creation of object
+    /**
+     * DatabaseHandler::__construct()
+     * 
+     * @return
+     */
     private function __construct(){}
+   /**
+    * DatabaseHandler::GetRowSet()
+    * 
+    * @return
+    */
    final private static function GetRowSet()
     {
         // Create PDO Fetch mode if not exist
@@ -34,7 +48,12 @@ class DatabaseHandler
         return self::$_rOwset;
     }
     // Return an initialized database handler
-    public static function GetHandler()
+    /**
+     * DatabaseHandler::GetHandler()
+     * 
+     * @return
+     */
+    private static function GetHandler()
     {
         // Create a database connection only if one doesn’t already exist
         if (!isset(self::$_mHandler))
@@ -65,12 +84,22 @@ class DatabaseHandler
         return self::$_mHandler;
     }
     // Clear the PDO class instance
+    /**
+     * DatabaseHandler::Close()
+     * 
+     * @return
+     */
     public static function Close()
     {
         self::$_mHandler = null;
     }
 
     // Wrapper method for PDOStatement::fetchAll()
+   /**
+    * DatabaseHandler::GetAll()
+    * 
+    * @return
+    */
    final public static function GetAll($sqlQuery, $params = null)
     {
         // Initialize the return value to null
@@ -102,6 +131,11 @@ class DatabaseHandler
    
 
     // Return the number of all rows value in the table
+   /**
+    * DatabaseHandler::RowNum()
+    * 
+    * @return
+    */
    final public static function RowNum($sqlQuery, $params = null)
     {
         // Initialize the return value to null
@@ -129,6 +163,11 @@ class DatabaseHandler
     }
 
     // Wrapper method for PDOStatement::execute()
+    /**
+     * DatabaseHandler::Execute()
+     * 
+     * @return
+     */
     final public static function Execute($sqlQuery, $params = null)
     {
         // Try to execute an SQL query or a stored procedure

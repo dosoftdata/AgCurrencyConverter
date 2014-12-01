@@ -1,0 +1,11 @@
+
+Options +SymLinksIfOwnerMatch
+RewriteEngine On
+RewriteBase /AgCurrencyConverter/
+
+RewriteCond %{SERVER_PORT} 80 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteRule ^(.+)/$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+

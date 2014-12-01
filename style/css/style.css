@@ -23,7 +23,7 @@ padding-top:6px;
 .rounded {
 border-radius:7px;
 }
-input .error {
+input.error {
 border:1px solid red;
 }
 .bold {
@@ -35,20 +35,24 @@ color:white !important;
 .colored {
 color:red !important;
 }
+required{
+ color:red !important;
+ font-weight:bold !important;   
+}
 .error {
-background:#ffecec url(../images/notif/error.png) no-repeat 10px 50%;
+background:#ffecec url(../img/notif/error.png) no-repeat 10px 50%;
 border:1px solid #f5aca6;
 }
 .successes {
-background:#e9ffd9 url(../images/notif/success.png) no-repeat 10px 50%;
+background:#e9ffd9 url(../img/notif/success.png) no-repeat 10px 50%;
 border:1px solid #a6ca8a;
 }
 .warning {
-background:#fff8c4 url(../images/notif/warning.png) no-repeat 10px 50%;
+background:#fff8c4 url(../img/notif/warning.png) no-repeat 10px 50%;
 border:1px solid #f2c779;
 }
 .notice {
-background:#e3f7fc url(../images/notif/notice.png) no-repeat 10px 50%;
+background:#e3f7fc url(../img/notif/notice.png) no-repeat 10px 50%;
 border:1px solid #8ed9f6;
 }
 .error_box {

@@ -7,7 +7,7 @@
 	<meta name="author" content="Clement Mukendi" />
 	<link href="style/css/bootstrap.css" rel="stylesheet" type="text/css" />
 	<link href="style/css/style.css" rel="stylesheet" type="text/css" />
-	<title>Dev</title>
+	<title>Currency - Converter</title>
 </head>
 
 
